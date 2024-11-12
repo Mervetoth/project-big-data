@@ -1,0 +1,19 @@
+1-Lancer ZooKeeper :
+
+./bin/zookeeper-server-start.sh ./config/zookeeper.properties
+
+2-Lancer le serveur Kafka :
+
+./bin/kafka-server-start.sh ./config/server.properties
+
+3-cree topic vlip kafka
+
+./bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic velib-stations
+
+3-s lancer notre producer 
+python3 ./velib-get-stations.py
+
+4- lancer pour visualiser les fluctuations du nombre d'emplacements libres pour chaque station
+ python3 ./velib-monitor-stations.py
+
+ wOtAyOjswNA5Ru5s
